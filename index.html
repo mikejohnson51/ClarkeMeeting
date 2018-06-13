@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<strong>Clarke Lab Meeting Spring 2018</strong>
+</center></h1>
+<h3 class="subtitle"><em><center>
+<a href="https://mikejohnson51.github.io">Mike Johnson</a>
+</center></em></h3>
+
+</div>
+
+
+<p><br><br></p>
+<div id="travel" class="section level1">
+<h1>Travel</h1>
+<hr />
+<div id="tuscaloosa-alabama" class="section level3">
+<h3>Tuscaloosa, Alabama</h3>
+<p>Summer 2017: Research Coordinator @ NOAA’s National Water Center</p>
+<p><br> <left> <a ><img alt = '' width='400' src='img/nwc.png' /></a> </left> <br> <br></p>
+</div>
+<div id="amsterdam-netherlands" class="section level3">
+<h3>Amsterdam, Netherlands</h3>
+<p>Winter of 2018: Visiting Researcher at the VU Amsterdam.</p>
+<br>
+<center>
+<a ><img alt = '' width='800' src='img/Amsterdam.jpeg' /></a>
+</center>
+<p><br> <br></p>
+</div>
+</div>
+<div id="packages" class="section level1">
+<h1>Packages</h1>
+<hr />
+<p>Over the last year several packages and applications have been developed. Most are available on Github:</p>
+<div id="hydrodata" class="section level3">
+<h3><a href="http://mikejohnson51.github.io/HydroData/">HydroData</a></h3>
+<p>HydroData is an R package designed to help users find, get, visualize and use a range of Earth Systems data for a defined Area of Interest. The package provides functions to automatically download data, in a consistent format, from 19 sources focused on spatial and observation data through a consistent query. Further, it helps interactively visualize and share data within R and/or a browser; and export data for external use in GIS, python, or other applications.</p>
+<br> <br>
+<center>
+<a ><img alt = '' width='800' src='img/HydroData.png' /></a>
+</center>
+<p><br> <br></p>
+</div>
+<div id="evapotraspiration" class="section level3">
+<h3>Evapotraspiration</h3>
+<p><strong>Working with:</strong> Dami Eyelade &amp; Dino Korac</p>
+<p>The Evapotranspiration package serves to model potential and actual evapotranspiration using DAYMET, WeatherUnderground, and NLCD data as inputs. <code>HydroData</code> facilitates data access, the model algorithm was developed to synthesize these inputs, and the land cover coefficients for Anderson level II land cover classifications were developed using MODIS 16 products.</p>
+<br> <br>
+<center>
+<a ><img alt = '' width='800' src='img/cimis.png' /></a>
+</center>
+<p><br> <br></p>
+</div>
+<div id="nwm-client" class="section level3">
+<h3>NWM Client</h3>
+<p>The National Water Model (NWM) client is supported by UCARs COMET program. It helps access, format, subset NWM forecasts stored on the HydroShare and NOMADs servers for an area of interest.</p>
+</div>
+<div id="flowlinefinder" class="section level3">
+<h3><a href="https://github.com/mikejohnson51/FlowlineFinder">FlowlineFinder</a></h3>
+<p><strong>Working with:</strong> <a href="http://pjohns.github.io/pjohns">Pat Johnson</a></p>
+<p>This project is a continuation of the ‘FlowlineFinder’ demonstrated at the CUASHI 2017 <a href="https://www.cuahsi.org/uploads/pages/img/2017_Hydroinformatics_Program_-_Online_Version.pdf">HydroInformatics Conference</a> in Tuscaloosa, AL. Its intention is to help users find, view and download NHD and National Water Model Data from either a desktop or mobile application. Of particular interest is the ability to find nearby NHD reaches in the field. Much of the data processing and gathering is driven by the <a href="http://mikejohnson51.github.io/HydroData/">HydroData</a> and NWM packages with a interface driven by R Shiny.</p>
+<br> <br>
+<center>
+<a ><img alt = '' width='800' src='img/FLF.png' /></a>
+</center>
+<p><br> <br></p>
+</div>
+</div>
+<div id="papers" class="section level1">
+<h1>Papers</h1>
+<hr />
+<ol style="list-style-type: decimal">
+<li><p><strong>Johnson, JM</strong>, Jim M. Coll, Paul J. Ruess, and Jordan T. Hastings, <strong>2018</strong>. <em>Challenges and Opportunities for Creating Intelligent Hazard Alerts: The “FloodHippo” Prototype</em>. Journal of the American Water Resources Association (JAWRA) 1–10. <a href="https://doi.org/10.1111/1752-1688.12645" class="uri">https://doi.org/10.1111/1752-1688.12645</a></p></li>
+<li><p>Loaiciga, HA, <strong>Johnson, JM</strong>, <strong>2018</strong>. <em>Infiltration on sloping terrain and its role on runoff generation and slope stability</em>. Journal of Hydrology ISSN 0022-1694, <a href="https://doi.org/10.1016/j.jhydrol.2018.04.023" class="uri">https://doi.org/10.1016/j.jhydrol.2018.04.023</a>.</p></li>
+<li><p><strong>Johnson JM</strong>, Loaiciga HA. <strong>2017</strong>. <em>Coupled infiltration and kinematic-wave runoff simulation in slopes: implications for slope stability</em>. Water 9(5). <a href="doi:10.3390/w9050327" class="uri">doi:10.3390/w9050327</a></p></li>
+<li><p><strong>Johnson JM</strong>, Coll J M, et al. <strong>2017</strong>. <em>National Water Centers Innovators Program Summer Institute Report. Consortium of Universities for the Advancement of Hydrologic Science, Inc</em>. Technical Report 14 <a href="doi:10.4211/technical.20171009" class="uri">doi:10.4211/technical.20171009</a></p></li>
+</ol>
+</div>
+<div id="in-progress" class="section level1">
+<h1>In Progress</h1>
+<hr />
+<ol start="5" style="list-style-type: decimal">
+<li><p><strong>Johnson JM</strong>, Clarke KC <strong>(prepping for resubmission)</strong>. <em>The Five Meanings of Water Security</em>. Journal of Hydrology.</p></li>
+<li><p>Wens M, <strong>Johnson JM</strong>, Zagaria C, Veldkamp TIE. <strong>(ready to submit)</strong>. <em>Improving Drought Risk Modeling: An agent-based approach</em>. WIREs Water.</p></li>
+</ol>
+<div id="california-sleuth-application" class="section level3">
+<h3>California SLEUTH Application</h3>
+<p>Keith Clarke is leading the implementation of a large scale (state of California), high-resolution (30 meter) application of SLEUTH. The first draft of this data subdivided into 8 regions has been completed</p>
+<br> <br>
+<center>
+<a ><img alt = '' width='800' src='img/ca_sleuth.png' /></a>
+</center>
+<p><br> <br></p>
+</div>
+<div id="drought-based-agent-modeling-kerman-city" class="section level3">
+<h3>Drought-based Agent Modeling Kerman City</h3>
+<p>While in Amsterdam a small scale agent-based model was developed to better understand the dynamics between climate and ground water with drawls in an agricultural area near Fresno, CA. The framework has been setup and the model runs.</p>
+<br> <br>
+<center>
+<a ><img alt = '' width='800' src='img/Drought_Risk.png' /></a>
+</center>
+<p><br> <br></p>
+</div>
+<div id="global-1-km-evapotranspiration-modeling" class="section level3">
+<h3>Global 1 km Evapotranspiration Modeling</h3>
+<p>Using WorldClim monthly data and the algorithm of the <code>Evapotransipiration</code> package a global climatology of PET has been constructed.</p>
+<br> <br>
+<center>
+<a ><img alt = '' width='800' src='img/World_etr.gif' /></a>
+</center>
+<p><br> <br></p>
+</div>
+<div id="usa-streamflow-thresholds" class="section level3">
+<h3>USA streamflow thresholds</h3>
+<p><strong>Working with:</strong> Helen Chen</p>
+<p>Condensing a 23 hourly run of the National Water Model to daily, monthly, and annual values offers the opportunity to develop low and high threshold values for each and every stream reach in the continental United States. By defining a set of thresholds for each reach, a high and low benchmark (10% tails of FDC and Q ratings) each new forecast can be compared and subset with respect to these thresholds. The remaining reaches are those that demand computational attention for flood mapping and drought monitoring.</p>
+<p>Further it offers an opportunity to better study:</p>
+<ol style="list-style-type: decimal">
+<li>where the NWM preforms well and poorly (Compared to the NWIS)</li>
+<li>how stream dynamics change across space and time</li>
+<li>how the HAND flood mapping technique can be refined</li>
+</ol>
+<p><br> <br></p>
+</div>
+</div>
+<div id="summer-2018" class="section level1">
+<h1>Summer 2018</h1>
+<hr />
+<div id="boulder-colorado" class="section level3">
+<h3>Boulder, Colorado</h3>
+<p><strong>NCAR lab:</strong>: Connecting SLEUTH (time-varying land covers) to the NWM @ the NCAR RAL</p>
+<p><br><br> <br><br> <br><br></p>
+<hr />
+<p><a href="https://github.com/mikejohnson51%22">Github</a> - <a href="https://www.researchgate.net/profile/Mike_Johnson29">ReseracherGate</a> - <a href="https://scholar.google.com/citations?hl=en&amp;user=MrXM9cgAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a> - <a href="https://mikejohnson51.github.io">Website</a></p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
