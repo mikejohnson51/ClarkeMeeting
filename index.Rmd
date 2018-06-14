@@ -5,6 +5,16 @@ subtitle: <center>[Mike Johnson](https://mikejohnson51.github.io)</center>
 
 <br><br>
 
+# Clarke Lab
+***
+
+<br>
+<left>
+<a ><img alt = '' width='800' src='img/lab_pic.png' /></a>
+</left>
+<br>
+<br>
+
 
 # Travel
 ***
@@ -165,6 +175,6 @@ Further it offers an opportunity to better study:
 <br><br>
 
 ***
-[Github](https://github.com/mikejohnson51") - [ReseracherGate](https://www.researchgate.net/profile/Mike_Johnson29) - [Google Scholar](https://scholar.google.com/citations?hl=en&user=MrXM9cgAAAAJ&view_op=list_works&sortby=pubdate) - [Website](https://mikejohnson51.github.io)
+<center>[Github](https://github.com/mikejohnson51") - [ReseracherGate](https://www.researchgate.net/profile/Mike_Johnson29) - [Google Scholar](https://scholar.google.com/citations?hl=en&user=MrXM9cgAAAAJ&view_op=list_works&sortby=pubdate) - [Website](https://mikejohnson51.github.io)</center>
 
 
