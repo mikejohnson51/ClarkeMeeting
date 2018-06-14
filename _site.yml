@@ -1,7 +1,7 @@
 output_dir: '.'
 output:
   html_document:
-    theme: yeti
+    theme: flatly
     fig_width: 5.5
     fig_height: 3.5
     fig_retina: 1
