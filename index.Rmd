@@ -124,7 +124,7 @@ Keith Clarke is leading the implementation of a large scale (state of California
 <br>
 <br>
 
-### Drought-based Agent Modeling Kerman City
+### Drought risk Agent-based Modeling (Kerman City)
 
 While in Amsterdam a small scale agent-based model was developed to better understand the dynamics between climate and ground water with drawls in an agricultural area near Fresno, CA. The framework has been setup and the model runs.
 
