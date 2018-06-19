@@ -1,6 +1,6 @@
 ---
-title: <center>**Clarke Lab Meeting Spring 2018**</center>
-subtitle: <center>[Mike Johnson](https://mikejohnson51.github.io)</center>
+title: <strong>Clarke Lab Meeting Spring 2018</strong>
+subtitle: <strong>[Mike Johnson](https://mikejohnson51.github.io)</strong>
 ---
 
 <br><br>
